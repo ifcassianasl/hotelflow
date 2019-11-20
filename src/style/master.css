@@ -1,0 +1,136 @@
+body {
+  overflow-y: hidden;
+}
+
+nav {
+  /* background-color: #838CC3; */
+  height: 12%;
+}
+
+.brand-logo {
+  font-family: 'Pacifico', cursive;
+}
+
+#mobile-demo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#mobile-demo > li > a{
+  color: white;
+  font: bolder;
+}
+
+.nav-wrapper {
+  margin-left: 10px;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.p-button-register {
+  border: none;
+  padding: 15px 30px 15px 30px;
+  border-radius: 8px;
+  color: rgb(32, 32, 32);
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+.p-button-register:hover {
+  cursor: pointer;
+}
+
+/* Set Color */
+
+.carousel-item {
+  color: white;
+}
+
+.number-one {
+  color: #ffce5c;
+}
+
+/* Page One */
+
+.collection.collection.with-header, .collection.with-header > .collection-header, .collection > .collection-item  {
+  background-color: transparent;
+  border: none; 
+}
+
+.page-one > .p-carousel-explorer > button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.why-use {
+  display: flex;
+  justify-content: center;
+}
+
+.why-use > .number {
+  background-color: rgb(216, 148, 0);
+  border: rgb(216, 148, 0) solid 15px;
+  margin: 5px;
+}
+
+section.carousel-item > div.center{
+  display: flex;
+  justify-content: center;
+}
+
+iframe {
+  max-width: 853px;
+  max-height: 450px;
+}
+
+section.c-carousel-four.card-classon{
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.carousel-item>div.center#developer {
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-field label {
+  color: #ffffff;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #ffffff;
+}
+
+#form-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form-login .links {
+  display: flex;
+  flex-direction: column;
+}
+
+#form-login .links a {
+  text-decoration: none;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+#form-login .links a:hover {
+  color: #26a69a;
+}
+
+#form-login .row {
+}
