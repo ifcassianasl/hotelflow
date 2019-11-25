@@ -22,7 +22,7 @@
           <input id="confirm-password" type="password" class="validate">
         </div>
       </div>
-      <a class="btn waves-effect waves-light" href="./perfil.php">Confirmar
+      <a class="btn waves-effect waves-light" href="../back/perfil.php">Confirmar
         <i class="material-icons right">send</i>
       </a>        
     </form>

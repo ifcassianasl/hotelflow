@@ -16,7 +16,7 @@
           <input id="password" type="password" class="validate">
         </div>
       </div>
-      <a class="btn waves-effect waves-light" href="./perfil.php">Entrar</a>
+      <a class="btn waves-effect waves-light" href="../back/perfil.php">Entrar</a>
       <div class="links">
         <a href="#">Esqueci a senha</a>
         <a href="#">Não sou cadastrado</a>

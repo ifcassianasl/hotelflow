@@ -1,7 +1,9 @@
 <?php
+  // include_once('./turma.php');
+
   class TurmaDAO {
-    private function getConexao () {
-      $stringConnection = 'pgsql:host=localhost;dbname="Classon";port=5432';
+    public function getConexao () {
+      $stringConnection = 'pgsql:host=localhost;dbname=Classon;port=5432';
       $con = new PDO($stringConnection, "postgres", "postgres");
       return $con;
     }
@@ -54,7 +56,7 @@
 
     public function buscar ($id){
       $con = $this -> getConexao();
-      $sql = 'SELECT * FROM "Turma" WHERE "id" = ?';
+      $sql = 'SELECT * FROM "Turma" WHERE id = ?';
       $stm = $con -> prepare($sql);
       $stm -> bindValue(1, $id);
 
@@ -62,8 +64,8 @@
 
       if($res){	
         $linha = $stm -> fetch(PDO::FETCH_ASSOC);
-        $turma = new Turma($linha['nome'],$linha['sala'],$linha['area']);
-        $turma -> setID(intval($linha['id']));
+        $turma = new Turma($linha["nome"], $linha["sala"], $linha["area"]);
+        $turma -> setID(intval($linha["id"]));
       }
       else{
         $turma = $res;
@@ -73,16 +75,13 @@
       $stm -> closeCursor();
       $stm = NULL;
       $con = NULL;
-      return $curso;
+      return $turma;
     }
 
-    public function lista ($limit, $offset){
+    public function lista (){
       $con = $this -> getConexao();
-      $sql = 'SELECT * FROM "Turma" LIMIT ? OFFSET ?';
+      $sql = 'SELECT * FROM "Turma"' ;
       $stm = $con -> prepare($sql);
-      $stm -> bindValue(1, $limit);
-      $stm -> bindValue(2, $offset);
-
       $res= $stm -> execute();
       $listTurma = array();
       if($res){	
@@ -95,7 +94,7 @@
       $stm -> closeCursor();
       $stm = NULL;
       $con = NULL;
-      return $listCurso;
+      return $listTurma;
     }
 
     public function altera ($turma){

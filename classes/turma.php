@@ -7,9 +7,9 @@
     private $avisos;
 
     public function __construct ($nome, $sala, $area) {
-      $this -> nome = $this -> setNome($nome);
-      $this -> sala = $this -> setSala($sala);
-      $this -> area = $this -> setArea($area);
+      $this -> nome = $nome;
+      $this -> sala = $sala;
+      $this -> area = $area;
       $this -> avisos = [];
     }
 

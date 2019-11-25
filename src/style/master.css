@@ -17,7 +17,7 @@ nav {
   justify-content: space-evenly;
 }
 
-#mobile-demo > li > a{
+#mobile-demo>li>a {
   color: white;
   font: bolder;
 }
@@ -38,7 +38,7 @@ nav {
   padding: 15px 30px 15px 30px;
   border-radius: 8px;
   color: rgb(32, 32, 32);
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .p-button-register:hover {
@@ -57,12 +57,14 @@ nav {
 
 /* Page One */
 
-.collection.collection.with-header, .collection.with-header > .collection-header, .collection > .collection-item  {
+.collection.collection.with-header,
+.collection.with-header>.collection-header,
+.collection>.collection-item {
   background-color: transparent;
-  border: none; 
+  border: none;
 }
 
-.page-one > .p-carousel-explorer > button {
+.page-one>.p-carousel-explorer>button {
   border: none;
   background-color: transparent;
   color: white;
@@ -75,13 +77,13 @@ nav {
   justify-content: center;
 }
 
-.why-use > .number {
+.why-use>.number {
   background-color: rgb(216, 148, 0);
   border: rgb(216, 148, 0) solid 15px;
   margin: 5px;
 }
 
-section.carousel-item > div.center{
+section.carousel-item>div.center {
   display: flex;
   justify-content: center;
 }
@@ -91,7 +93,7 @@ iframe {
   max-height: 450px;
 }
 
-section.c-carousel-four.card-classon{
+section.c-carousel-four.card-classon {
   font-size: 25px;
   display: flex;
   justify-content: center;
@@ -106,8 +108,9 @@ section.carousel-item>div.center#developer {
 .input-field label {
   color: #ffffff;
 }
+
 /* label focus color */
-.input-field input[type=text]:focus + label {
+.input-field input[type=text]:focus+label {
   color: #ffffff;
 }
 
@@ -132,5 +135,7 @@ section.carousel-item>div.center#developer {
   color: #26a69a;
 }
 
-#form-login .row {
+#create-class {
+  display: flex;
+  flex-direction: column;
 }
