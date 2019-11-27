@@ -11,7 +11,7 @@
     public function inserir ($turma) {
       $con = $this -> getConexao();
 
-      $sql ='INSERT INTO "Turma" ("nome", "area", "sala") 
+      $sql = 'INSERT INTO "Turma" ("nome", "area", "sala") 
         VALUES (?,?,?) RETURNING "id"';
 
       $stm = $con->prepare($sql);

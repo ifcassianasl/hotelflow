@@ -139,3 +139,12 @@ section.carousel-item>div.center#developer {
   display: flex;
   flex-direction: column;
 }
+
+#my-classes li div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#my-classes li div a {
+  font-size: 1.2em;
+}

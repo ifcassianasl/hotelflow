@@ -1,4 +1,5 @@
-<?php include_once('../front/header.php'); ?>
+<?php 
+  require_once('../front/header.php');?>
 
 <main class="carousel carousel-slider center">
   <section class="carousel-item indigo lighten-1 white-text">
