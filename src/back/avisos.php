@@ -28,7 +28,7 @@
           <?php echo $aviso -> getConteudo() ?>
           <br>
           <span class="align-right">
-            <a href="create-class.php?id=<?php echo $id?>&idAviso=<?php echo $aviso->getID(); ?>" class="white-text">
+            <a href="./class.php?id=<?php echo $id?>&idAviso=<?php echo $aviso->getID(); ?>" class="white-text">
               <i class="material-icons">edit</i>
             </a>
             <a href="./controllers/excluir-aviso.php?id=<?php echo $id?>&idAviso=<?php echo $aviso->getID(); ?>" class="white-text">

@@ -61,7 +61,7 @@
 
       if($res){	
         $linha = $stm -> fetch(PDO::FETCH_ASSOC);
-        $aviso = new Aviso($linha['conteudo']);
+        $aviso = new Aviso($linha['conteudo'], $linha['idturma']);
         //TODO: turma por id
         $aviso -> setID(intval($linha['id']));
       }

@@ -1,14 +1,25 @@
 <?php 
   require_once('./header.php');
-  include_once('../../classes/turmaDAO.php');
-  include_once('../../classes/turma.php');
+  require_once('../../classes/turmaDAO.php');
+  require_once('../../classes/turma.php');
+  require_once('../../classes/aviso.php');
+  require_once('../../classes/avisoDAO.php');
+
 
   $id = isset($_GET['id']);
+  $idAviso = isset($_GET['idAviso']);
   
   if($id){
     $id = $_GET['id'];
     $tdao = new TurmaDAO();
   }
+  
+  if($idAviso){
+    $idAviso = $_GET['idAviso'];
+    $adao = new AvisoDAO();
+    $aviso = $adao -> buscar(intval($idAviso));
+  }
+
 
   $turma = $tdao->buscar(intval($id));
 ?>
@@ -26,7 +37,7 @@
       <form action="./controllers/novo-aviso.php" method="post">
         <div class="input-field col s12">
           <label for="aviso">Adicionar aviso</label>
-          <input id="aviso" name="aviso" type="text" class="validate">
+          <input id="aviso" name="aviso" type="text" class="validate" value="<?php if($idAviso) echo $aviso -> getConteudo(); ?>">
         </div>
         <input type="hidden" id="idTurma" name="idTurma" value="<?php echo $id;?>">
         <button class="btn btn-smart" type="submit">Enviar</button>
