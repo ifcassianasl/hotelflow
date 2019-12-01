@@ -148,3 +148,10 @@ section.carousel-item>div.center#developer {
 #my-classes li div a {
   font-size: 1.2em;
 }
+
+#dados {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+}

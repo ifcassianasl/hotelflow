@@ -1,7 +1,7 @@
 <?php
   class AvisoDAO {
     private function getConexao () {
-      $stringConnection = 'pgsql:host=localhost;dbname="Classon";port=5432';
+      $stringConnection = 'pgsql:host=localhost;dbname=Classon;port=5432';
       $con = new PDO($stringConnection, "postgres", "postgres");
       return $con;
     }
@@ -76,19 +76,17 @@
       return $aviso;
     }
 
-    public function lista ($limit, $offset){
+    public function lista (){
       $con = $this -> getConexao();
-      $sql = 'SELECT * FROM "Aviso" LIMIT ? OFFSET ?';
+      $sql = 'SELECT * FROM "Aviso"';
       $stm = $con -> prepare($sql);
-      $stm -> bindValue(1, $limit);
-      $stm -> bindValue(2, $offset);
 
       $res = $stm -> execute();
       $listAviso = array();
 
       if($res){	
         while($linha = $stm->fetch(PDO::FETCH_ASSOC)){
-          $aviso = new Aviso($linha['conteudo']);
+          $aviso = new Aviso($linha["conteudo"], $linha["idturma"]);
           //TODO: turma por id
           $aviso -> setID(intval($linha['id']));
           array_push($listAviso, $aviso);

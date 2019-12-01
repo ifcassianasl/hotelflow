@@ -4,8 +4,8 @@
     private $conteudo;
     private $turma;
 
-    public function __construct($conteudo, $turma=null) {
-      $this -> conteudo = $this -> setConteudo($conteudo);
+    public function __construct($conteudo, $turma) {
+      $this -> conteudo = $conteudo;
       $this -> turma = $turma;
     }
 

@@ -1,19 +1,40 @@
 <?php 
-    require_once('./header.php');
-    include_once('../../classes/turmaDAO.php');
-    include_once('../../classes/turma.php');
+  require_once('./header.php');
+  include_once('../../classes/turmaDAO.php');
+  include_once('../../classes/turma.php');
+
+  $id = isset($_GET['id']);
+  
+  if($id){
+    $id = $_GET['id'];
+    $tdao = new TurmaDAO();
+  }
+
+  $turma = $tdao->buscar(intval($id));
 ?>
+
 <main class="carousel carousel-slider center">
   <section class="carousel-item c-carousel-one indigo lighten-1" id="turma">
-    <h4>Nome da turma</h4>
+    <a class="white-text left-align breadcrumb" href="./perfil.php">
+      <i class="material-icons left">arrow_back</i>
+      Perfil
+    </a>
+
+    <h4><?php echo $turma -> getNome(); ?></h4>
     <div class="divider"></div>
-    <div class="dados">
+    <div id="dados">
       <form action="./controllers/novo-aviso.php" method="post">
         <div class="input-field col s12">
-          <input id="aviso" name="aviso" type="text" class="validate" placeholder="Adicionar aviso">
+          <label for="aviso">Adicionar aviso</label>
+          <input id="aviso" name="aviso" type="text" class="validate">
         </div>
+        <button class="btn btn-smart" type="submit">Enviar</button>
       </form>
     </div>
+    <div class="divider"></div>
+    <article class="center">
+      <?php require_once('./avisos.php'); ?>
+    </article>
   </section>
 </main>
 

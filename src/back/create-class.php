@@ -14,7 +14,7 @@
 
 <main class="carousel carousel-slider center">
   <section class="carousel-item c-carousel-one indigo lighten-1" id="create-class">
-    <a class="white-text left-align" href="./perfil.php">
+    <a class="white-text left-align breadcrumb" href="./perfil.php">
       <i class="material-icons left">arrow_back</i>
       Perfil
     </a>
