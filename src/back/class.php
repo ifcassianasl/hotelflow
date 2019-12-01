@@ -28,6 +28,7 @@
           <label for="aviso">Adicionar aviso</label>
           <input id="aviso" name="aviso" type="text" class="validate">
         </div>
+        <input type="hidden" id="idTurma" name="idTurma" value="<?php echo $id;?>">
         <button class="btn btn-smart" type="submit">Enviar</button>
       </form>
     </div>

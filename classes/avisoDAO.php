@@ -9,7 +9,7 @@
     public function inserir ($aviso) {
       $con = $this -> getConexao();
 
-      $sql ='INSERT INTO "Aviso" ("conteudo", "idTurma") 
+      $sql ='INSERT INTO "Aviso" ("conteudo", "idturma") 
         VALUES (?,?) RETURNING "id"';
 
       $stm = $con->prepare($sql);
