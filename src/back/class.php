@@ -30,8 +30,8 @@
   </a>
 
   <h4 class="white-text center"><?php echo $turma -> getNome(); ?></h4>
-  <div class="divider"></div>
   <div id="dados">
+    <div class="divider div-class center"></div>
     <form action="./controllers/novo-aviso.php<?php if($idAviso) { ?>?idAviso= <?php echo $idAviso;}?>" method="post">
       <div class="input-field col s12">
         <label for="aviso">Adicionar aviso</label>
@@ -40,8 +40,8 @@
       <input type="hidden" id="idTurma" name="idTurma" value="<?php echo $id;?>">
       <button class="btn btn-smart" type="submit">Enviar</button>
     </form>
+    <div class="divider div-class center"></div>
   </div>
-  <div class="divider"></div>
   <article class="center">
     <?php require_once('./avisos.php'); ?>
   </article>

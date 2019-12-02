@@ -6,7 +6,7 @@
 <div class="turmas white-text">
   <h6>Minhas turmas</h6>
   <a href="./create-class.php" class="btn btn-smart">Criar turma</a>
-  <ul class="collection" id="my-classes">
+  <ul class="collection" id="turmas">
     <?php
       $turmaDAO = new TurmaDAO();
       $listTurma = $turmaDAO -> lista();

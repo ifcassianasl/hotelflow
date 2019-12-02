@@ -150,10 +150,27 @@ section.carousel-item>div.center#developer {
   padding: 10px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .perfil {
   background-color: #5c6bc0;
   height: 100vh;
   width: 100%;
+}
+
+.div-class {
+  width: 90%;
+  margin: 10px;
+}
+
+.avisos, .turmas {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#avisos, #turmas {
+  width: 80%;
 }
