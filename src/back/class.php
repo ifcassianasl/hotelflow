@@ -34,7 +34,7 @@
     <h4><?php echo $turma -> getNome(); ?></h4>
     <div class="divider"></div>
     <div id="dados">
-      <form action="./controllers/novo-aviso.php" method="post">
+      <form action="./controllers/novo-aviso.php?idAviso=<?php if($idAviso) echo $idAviso?>" method="post">
         <div class="input-field col s12">
           <label for="aviso">Adicionar aviso</label>
           <input id="aviso" name="aviso" type="text" class="validate" value="<?php if($idAviso) echo $aviso -> getConteudo(); ?>">

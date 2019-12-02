@@ -62,7 +62,6 @@
       if($res){	
         $linha = $stm -> fetch(PDO::FETCH_ASSOC);
         $aviso = new Aviso($linha['conteudo'], $linha['idturma']);
-        //TODO: turma por id
         $aviso -> setID(intval($linha['id']));
       }
       else{
@@ -87,7 +86,6 @@
       if($res){	
         while($linha = $stm->fetch(PDO::FETCH_ASSOC)){
           $aviso = new Aviso($linha["conteudo"], $linha["idturma"]);
-          //TODO: turma por id
           $aviso -> setID(intval($linha['id']));
           array_push($listAviso, $aviso);
         }

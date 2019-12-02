@@ -7,12 +7,12 @@
   $turmaDAO = new TurmaDAO();
   $turma = $turmaDAO -> buscar(intval($_POST['idTurma']));
 
-  $idAviso = isset($_POST['idAviso']);
+  $idAviso = isset($_GET['idAviso']);
   $aviso = new Aviso($_POST['aviso'], $turma);
   $adao = new avisoDAO();
 
   if($idAviso){
-    $aviso -> setID(intval($_POST['idAviso']));
+    $aviso -> setID(intval($_GET['idAviso']));
     $adao -> altera($aviso);
   }
   else{
