@@ -1,4 +1,7 @@
 <?php
+  include_once('./turmaDAO.php');
+  include_once('./turma.php');
+  
   class AvisoDAO {
     private function getConexao () {
       $stringConnection = 'pgsql:host=localhost;dbname=Classon;port=5432';
@@ -12,10 +15,9 @@
       $sql ='INSERT INTO "Aviso" ("conteudo", "idturma") 
         VALUES (?,?) RETURNING "id"';
 
-      $stm = $con->prepare($sql);
+      $stm = $con -> prepare($sql);
       $stm -> bindValue(1, $aviso -> getConteudo());
       $stm -> bindValue(2, $aviso -> getTurma() -> getID());
-
 
       $res = $stm -> execute();
 
@@ -59,9 +61,14 @@
 
       $res = $stm -> execute();
 
-      if($res){	
+      $turma = new turmaDAO();
+
+      if($res){
         $linha = $stm -> fetch(PDO::FETCH_ASSOC);
-        $aviso = new Aviso($linha['conteudo'], $linha['idturma']);
+        $turmaDAO = new TurmaDAO();
+        $idt = $linha['idturma'];
+        $turma = $turmaDAO -> buscar($idt);
+        $aviso = new Aviso($linha["conteudo"], $turma);
         $aviso -> setID(intval($linha['id']));
       }
       else{
@@ -82,10 +89,13 @@
 
       $res = $stm -> execute();
       $listAviso = array();
-
+      
       if($res){	
         while($linha = $stm->fetch(PDO::FETCH_ASSOC)){
-          $aviso = new Aviso($linha["conteudo"], $linha["idturma"]);
+          $turmaDAO = new TurmaDAO();
+          $idt = $linha['idturma'];
+          $turma = $turmaDAO -> buscar($idt);
+          $aviso = new Aviso($linha["conteudo"], $turma);
           $aviso -> setID(intval($linha['id']));
           array_push($listAviso, $aviso);
         }

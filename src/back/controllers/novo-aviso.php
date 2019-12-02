@@ -7,6 +7,7 @@
   $turmaDAO = new TurmaDAO();
   $turma = $turmaDAO -> buscar(intval($_POST['idTurma']));
 
+  
   $idAviso = isset($_GET['idAviso']);
   $aviso = new Aviso($_POST['aviso'], $turma);
   $adao = new avisoDAO();
@@ -19,5 +20,5 @@
     $adao -> inserir($aviso);
   }
 
-  header("Location: ../class.php?id=".$_POST['idTurma']."");
+  header("Location: ../class.php?id=".$_POST['idTurma']);
 ?>
