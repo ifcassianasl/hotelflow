@@ -4,13 +4,11 @@
     private $area;
     private $nome;
     private $id;
-    private $avisos;
 
     public function __construct ($nome, $sala, $area) {
       $this -> nome = $nome;
       $this -> sala = $sala;
       $this -> area = $area;
-      $this -> avisos = [];
     }
 
     // GETTERS
@@ -32,10 +30,6 @@
       return $this -> id;
     }
 
-    public function getAvisos() {
-      return $this -> avisos;
-    }
-
     // SETTERS
 
     public function setNome($nome) {
@@ -52,16 +46,6 @@
 
     public function setID($id) {
       $this -> id = $id;
-    }
-
-    public function setAvisos($avisos) {
-      $this -> avisos = $avisos;
-    }
-
-    //FUNCTIONS
-
-    public function addAviso($aviso) {
-      array_push($this -> $avisos, $aviso);
     }
   }
 ?>
